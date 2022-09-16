@@ -1,0 +1,17 @@
+bind main   ! !?git revert %(commit)
+bind main   w !?git push origin
+bind main   B !?git rebase -i %(commit)
+bind main   T !@git tag %(prompt) %(commit)
+
+bind status a !?git commit --amend
+bind status P !?git push --force-with-lease
+# Delete a file
+bind status D !@?rm %(file)
+
+# Amend last commit: 
+bind generic + !git commit --amend
+
+bind diff <Up> move-up
+bind diff <Down> move-down
+
+set vertical-split = vertical
