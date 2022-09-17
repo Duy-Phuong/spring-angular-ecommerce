@@ -1298,12 +1298,17 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 ## 10. eCommerce Project - Angular Front End - Product List
 
 ### 1. Angular Project Overview - Part 1
+![](assets/Pasted%20image%2020220917205107.png)
+![](assets/Pasted%20image%2020220917205136.png)
+![](assets/Pasted%20image%2020220917205242.png)
+
 
 ### 2. Angular Project Overview - Part 2
 
 ![image-20200613084340539](angular-java-spring-boot.assets/image-20200613084340539.png)  
 
 ### 3. Angular Project - Setup
+https://github.com/darbyluv2code/fullstack-angular-and-springboot/tree/master/source-code/ecommerce-project-release-1.0/01-basic-list/ecommerce-project/03-frontend/angular-ecommerce
 
 `ng new project`
 
@@ -1468,6 +1473,7 @@ export class AppModule { }
 ### 5. Angular Project - Create Product class and Product Service - Part 2
 
 ### 6. Angular Project - Update Angular Component
+![](assets/Pasted%20image%2020220917210719.png)
 
 ![image-20200613100435841](angular-java-spring-boot.assets/image-20200613100435841.png)
 
@@ -1518,18 +1524,23 @@ copy images to assets folder
 ## 11. eCommerce Project - Integrating Online Shop Template
 
 ### 1. Angular Project - Template Integration Overview
+![](assets/Pasted%20image%2020220917210938.png)
 
 ### 2. Angular Project - Download Starter Files
+https://github.com/darbyluv2code/fullstack-angular-and-springboot/tree/master/source-code/ecommerce-project-release-2.0
 
 ![image-20200613102027275](angular-java-spring-boot.assets/image-20200613102027275.png)  
 
 ![image-20200613102241973](angular-java-spring-boot.assets/image-20200613102241973.png)
+![](assets/Pasted%20image%2020220917211243.png)
+![](assets/Pasted%20image%2020220917211301.png)
 
 ### 2.2 Starter Files.html
 
 http://www.luv2code.com/ecommerce-release-2.0-starter-files
 
 ### 3. Angular Project - Tour of HTML Template Files
+![](assets/Pasted%20image%2020220917211203.png)
 
 ![image-20200613102331296](angular-java-spring-boot.assets/image-20200613102331296.png)  
 
@@ -1586,7 +1597,7 @@ angular.json
 
 ![image-20200613103931420](angular-java-spring-boot.assets/image-20200613103931420.png)  
 
-copy style.csss
+copy style.css, favicon to app
 
 ### 5. Angular Project - Add local custom CSS styles
 
@@ -1611,11 +1622,13 @@ index.html
 
 ```
 
+copy html and icon to app
 
 
 ### 6. Angular Project - Integrate Template Files and Logos
 
 copy vào assets và html
+Update link with hash
 
 app.component.html
 
@@ -1716,7 +1729,7 @@ product-list-grid.component.html
 </div>
 ```
 
-
+![](assets/Pasted%20image%2020220917212021.png)
 
 ### 7. Angular Project - Run the App
 
@@ -1953,6 +1966,7 @@ https://stackoverflow.com/questions/3748/storing-images-in-db-yea-or-nay
 ## 12. eCommerce Project - Search for Products by Category
 
 ### 1. Angular Project - Search for Products by Category - Overview - Part 1
+![](assets/Pasted%20image%2020220917212721.png)
 
 1. Define routes
 
@@ -1971,6 +1985,7 @@ https://stackoverflow.com/questions/3748/storing-images-in-db-yea-or-nay
 ![image-20200613141905737](angular-java-spring-boot.assets/image-20200613141905737.png)  
 
 Add PageNotFound
+![](assets/Pasted%20image%2020220917212809.png)
 
 ### 2. Angular Project - Search for Products by Category - Overview - Part 2
 
@@ -1982,11 +1997,12 @@ Step 6: Modify Spring Boot app - REST Repository needs new method
 
 ![image-20200613145555480](angular-java-spring-boot.assets/image-20200613145555480.png)  
 
-
+![](assets/Pasted%20image%2020220917214030.png)
 
 
 
 ### 3. Angular Project - Search for Products by Category - Overview - Part 3
+![](assets/Pasted%20image%2020220917214343.png)
 
 ### 4. Angular Project - Search for Products by Category - Code - Define routes
 
@@ -2032,6 +2048,7 @@ export class AppModule { }
 
 
 ### 5. Angular Project - Search for Products by Category - Code - Define Router Outlet
+![](assets/Pasted%20image%2020220917220533.png)
 
 app.component.html add link and outlet
 
@@ -2174,6 +2191,7 @@ export class ProductService {
 ## 13. eCommerce Project - Search for Products by Category (Dynamic Search Component)
 
 ### 1. Angular Project - Search for Products by Category (Dynamic Search Component 1)
+![](assets/Pasted%20image%2020220917220937.png)
 
 Development Process
 
@@ -2191,7 +2209,7 @@ Development Process
 
 \5. Update product service to call URL on Spring Boot app 
 
-
+![](assets/Pasted%20image%2020220917221050.png)
 
 ![image-20200613152106223](angular-java-spring-boot.assets/image-20200613152106223.png)  
 
@@ -2204,9 +2222,9 @@ Development Process
 // - get the entity types for the entities
 // - expose the entity ids for the array of entity/domain types
 
+![](assets/Pasted%20image%2020220917221216.png)
 
-
-
+![](assets/Pasted%20image%2020220917221318.png)
 
 ### 2. Angular Project - Search for Products by Category (Dynamic Search Component 2)
 
@@ -2274,6 +2292,10 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 ![image-20200613155442609](angular-java-spring-boot.assets/image-20200613155442609.png)
 
 ### 4. Angular Project - Dynamic Search Component - Create Component
+
+```
+ng generate component components/product-category-menu
+```
 
 product-category.ts
 
@@ -2662,7 +2684,28 @@ Development Process
 
 6. Update HTML page for ProductDetailsComponent to display product details
 
+Check pdf
+
 ### 2. Angular Project - Product Master-Detail View - Create new component and route
+product
+```java
+export class Product {
+
+    constructor(public id?: string, // add
+                public sku?: string,
+                public name?: string,
+                public description?: string,
+                public unitPrice?: number,
+                public imageUrl?: string,
+                public active?: boolean,
+                public unitsInStock?: number,
+                public dateCreated?: Date,
+                public lastUpdated?: Date
+        ) {
+    }
+    
+}
+```
 
 `ng generate component components/ProductDetails`
 
@@ -2792,6 +2835,8 @@ product.service.ts
 
 ![image-20200613194847928](angular-java-spring-boot.assets/image-20200613194847928.png)  
 
+![](assets/Pasted%20image%2020220917223843.png)
+
 có 2 cách fix 
 
 Cách 1: `product: Product = new Product();`
@@ -2800,7 +2845,7 @@ Cách 2:
 
 `        <img src="{{ product?.imageUrl }}" class="detail-img">`
 
-
+![](assets/Pasted%20image%2020220917223911.png)
 
 ![image-20200613195327020](angular-java-spring-boot.assets/image-20200613195327020.png)
 
@@ -2823,6 +2868,7 @@ https://docs.spring.io/spring-data/rest/docs/current/reference/html/#repository-
 ![image-20200613201101329](angular-java-spring-boot.assets/image-20200613201101329.png)  
 
 ![image-20200613201300651](angular-java-spring-boot.assets/image-20200613201300651.png)
+![](assets/Pasted%20image%2020220917225608.png)
 
 ### 2. Angular Project - Pagination Development Process - Part 1
 
@@ -3011,6 +3057,7 @@ product-list-grid.component.html
 
 
 ### 9. Angular Project - Pagination - Selecting Page Size - Part 1
+pdf
 
 product-list-grid.component.html
 
@@ -3060,6 +3107,7 @@ product-list.component.ts
 
 
 ### 12. Angular Project - Pagination - Keyword Search Overview
+pdf
 
 ### 13. Angular Project - Pagingation - Keyword Search - Update ProductService
 
@@ -3188,9 +3236,10 @@ export class CartStatusComponent implements OnInit {
 
 ```
 
-
+![](assets/Pasted%20image%2020220917231555.png)
 
 ### 3. Angular Project - Shopping Cart Status - Add Click Handler
+![](assets/Pasted%20image%2020220917231803.png)
 
 product-list-grid.component.html
 
@@ -3212,7 +3261,83 @@ addToCart(theProduct: Product) {
     this.cartService.addToCart(theCartItem);
   }
 ```
+cartservice
+```java
+import { Injectable } from '@angular/core';
+import { CartItem } from '../common/cart-item';
+import { Subject } from 'rxjs';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class CartService {
+
+  cartItems: CartItem[] = [];
+
+  totalPrice: Subject<number> = new Subject<number>();
+  totalQuantity: Subject<number> = new Subject<number>();
+
+  constructor() { }
+
+  addToCart(theCartItem: CartItem) {
+
+    // check if we already have the item in our cart
+    let alreadyExistsInCart: boolean = false;
+    let existingCartItem: CartItem = undefined;
+
+    if (this.cartItems.length > 0) {
+      // find the item in the cart based on item id
+
+      existingCartItem = this.cartItems.find( tempCartItem => tempCartItem.id === theCartItem.id );
+
+      // check if we found it
+      alreadyExistsInCart = (existingCartItem != undefined);
+    }
+
+    if (alreadyExistsInCart) {
+      // increment the quantity
+      existingCartItem.quantity++;
+    }
+    else {
+      // just add the item to the array
+      this.cartItems.push(theCartItem);
+    }
+
+    // compute cart total price and total quantity
+    this.computeCartTotals();
+  }
+
+  computeCartTotals() {
+
+    let totalPriceValue: number = 0;
+    let totalQuantityValue: number = 0;
+
+    for (let currentCartItem of this.cartItems) {
+      totalPriceValue += currentCartItem.quantity * currentCartItem.unitPrice;
+      totalQuantityValue += currentCartItem.quantity;
+    }
+
+    // publish the new values ... all subscribers will receive the new data
+    this.totalPrice.next(totalPriceValue);
+    this.totalQuantity.next(totalQuantityValue);
+
+    // log cart data just for debugging purposes
+    this.logCartData(totalPriceValue, totalQuantityValue);
+  }
+
+  logCartData(totalPriceValue: number, totalQuantityValue: number) {
+
+    console.log('Contents of the cart');
+    for (let tempCartItem of this.cartItems) {
+      const subTotalPrice = tempCartItem.quantity * tempCartItem.unitPrice;
+      console.log(`name: ${tempCartItem.name}, quantity=${tempCartItem.quantity}, unitPrice=${tempCartItem.unitPrice}, subTotalPrice=${subTotalPrice}`);
+    }
+
+    console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
+    console.log('----');
+  }
+}
+```
 
 
 ### 4. Angular Project - Shopping Cart Status Overview - Advanced
@@ -3460,6 +3585,7 @@ cart.service.ts
 ![image-20200613213830111](angular-java-spring-boot.assets/image-20200613213830111.png)
 
 ### 13. Angular Project - Shopping Cart Status - Add To Cart From Details View
+![](assets/Pasted%20image%2020220917232553.png)
 
 product-details.component.html
 
