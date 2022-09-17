@@ -235,6 +235,7 @@ http://www.luv2code.com/download-full-stack-angular-and-springboot-pdf-slides
 ## 2. Angular Overview
 
 ### 1. Angular Overview
+notion
 
 ## 3. Set Up Development Tools
 
@@ -243,16 +244,22 @@ http://www.luv2code.com/download-full-stack-angular-and-springboot-pdf-slides
 ## 4. TypeScript Crash Course - Fundamentals
 
 ### 1. TypeScript Overview
+https://github.com/darbyluv2code/fullstack-angular-and-springboot/tree/master/source-code/typescript-training
+notion
 
 `tsc hello.ts`
 
 ### 2. Creating our first TypeScript application
 
 ![image-20200612200909288](angular-java-spring-boot.assets/image-20200612200909288.png)
+![](assets/Pasted%20image%2020220917004342.png)
 
 ### 3. Defining Variables - Overview
 
 ### 4. Defining Variables - Write Some Code
+Reassign some wrong values to test
+
+![](assets/Pasted%20image%2020220917004705.png)
 
 ### 5. Creating Loops and Arrays - Overview
 
@@ -322,6 +329,7 @@ console.log(myCustomer.lastName);
 ### 2. Creating Classes - Write Some Code
 
 ### 3. Defining Accessors - Overview
+![](assets/Pasted%20image%2020220917010030.png)
 
 ```ts
 class Customer {
@@ -364,15 +372,68 @@ console.log(myCustomer.lastName);
 ![image-20200612201832080](angular-java-spring-boot.assets/image-20200612201832080.png)
 
 ### 4. Defining Accessors - Write Some Code
+![](assets/Pasted%20image%2020220917080849.png)
+
+![](assets/Pasted%20image%2020220917080942.png)
+![](assets/Pasted%20image%2020220917081017.png)
+
+![](assets/Pasted%20image%2020220917081152.png)
+![](assets/Pasted%20image%2020220917081114.png)
 
 ### 5. Configuring Compiler Options with tsconfig.json
+www.luv2code.com/tsconfig-docs
+
 
 `tsc --init`
+
+add "noEmitOnError": true
+
+```
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Projects */
+    // "incremental": true,                              /* Enable incremental compilation */
+    // "composite": true,                                /* Enable constraints that allow a TypeScript project to be used with project references. */
+    // "tsBuildInfoFile": "./",                          /* Specify the folder for .tsbuildinfo incremental compilation files. */
+    // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects */
+    // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
+    // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
+
+    /* Language and Environment */
+    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "noEmitOnError": true,
+
+
+    /* Modules */
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    ....
+    
+    /* Interop Constraints */
+    // "isolatedModules": true,                          /* Ensure that each file can be safely transpiled without relying on other imports. */
+    // "allowSyntheticDefaultImports": true,             /* Allow 'import x from y' when a module doesn't have a default export. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
+    // "preserveSymlinks": true,                         /* Disable resolving symlinks to their realpath. This correlates to the same flag in node. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+
+    /* Type Checking */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    ... 
+
+    /* Completeness */
+    // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  }
+}
+```
+
+![](assets/Pasted%20image%2020220917082125.png)
 
 ### 6. Parameter Properties
 
 ![image-20200612202318255](angular-java-spring-boot.assets/image-20200612202318255.png)
-
+![](assets/Pasted%20image%2020220917082335.png)
 ```ts
 class Customer {
   constructor(private _firstName: string, private _lastName: string) {}
@@ -411,12 +472,54 @@ tsc
 export class ...
 
 import {Customer} from ..
+![](assets/Pasted%20image%2020220917082559.png)
+
+```
+export class Customer {
+
+    constructor(private _firstName: string, private _lastName: string) {
+    }
+
+    public get firstName(): string {
+        return this._firstName;
+    }
+
+    public set firstName(value: string) {
+        this._firstName = value;
+    }
+
+    public get lastName(): string {
+        return this._lastName;
+    }
+    public set lastName(value: string) {
+        this._lastName = value;
+    }
+    
+}
+```
+
+```
+import { Customer } from "./Customer";
+
+// let's create an instance
+let myCustomer = new Customer("Martin", "Dixon");
+
+console.log(myCustomer.firstName);
+console.log(myCustomer.lastName);
+```
 
 ## 6. TypeScript Crash Course - Inheritance and Interfaces
 
 ### 1. Inheritance - Overview
 
 ![image-20200612204654579](angular-java-spring-boot.assets/image-20200612204654579.png)
+![](assets/Pasted%20image%2020220917083050.png)
+![](assets/Pasted%20image%2020220917083114.png)
+![](assets/Pasted%20image%2020220917083137.png)
+![](assets/Pasted%20image%2020220917083250.png)
+
+https://github.com/darbyluv2code/fullstack-angular-and-springboot/blob/master/source-code/typescript-training/05-inheritance/Shape.ts
+
 
 ### 2. Inheritance - Creating the Superclass and Subclass
 
@@ -533,6 +636,9 @@ for (let tempShape of theShapes) {
 ### 5. Inheritance - Adding Shapes to an Array
 
 ### 6. Abstract Classes - Overview
+![](assets/Pasted%20image%2020220917084236.png)
+![](assets/Pasted%20image%2020220917084253.png)
+![](assets/Pasted%20image%2020220917084321.png)
 
 Shape.ts
 
@@ -619,6 +725,10 @@ for (let tempShape of theShapes) {
 ### 7. Abstract Classes - Write Some Code
 
 ### 8. Interfaces - Overview
+![](assets/Pasted%20image%2020220917084544.png)
+![](assets/Pasted%20image%2020220917084601.png)
+![](assets/Pasted%20image%2020220917084623.png)
+
 
 Coach
 
@@ -640,7 +750,7 @@ export class CricketCoach implements Coach {
 }
 ```
 
-Drriver
+Driver
 
 ```ts
 import { CricketCoach } from './CricketCoach';
@@ -667,10 +777,20 @@ for (let tempCoach of theCoaches) {
 ## 7. Angular Crash Course - Fundamentals
 
 ### 1. Getting Started with Angular
+![](assets/Pasted%20image%2020220917085133.png)
 
 ### 2. Exploring the Angular Project
+![](assets/Pasted%20image%2020220917085159.png)
+![](assets/Pasted%20image%2020220917085507.png)
+![](assets/Pasted%20image%2020220917085525.png)
+![](assets/Pasted%20image%2020220917085552.png)
+![](assets/Pasted%20image%2020220917085608.png)
+![](assets/Pasted%20image%2020220917085622.png)
+
 
 ### 3. Creating a New Angular Project
+![](assets/Pasted%20image%2020220917085703.png)
+
 
 ### 4. Behind The Scenes of An Angular Project - Overview
 
@@ -679,10 +799,14 @@ for (let tempCoach of theCoaches) {
 ### 5. Behind The Scenes of An Angular Project - Demo
 
 ### 6. Creating a New Angular Component - Overview - Part 1
+![](assets/Pasted%20image%2020220917085941.png)
 
 ### 7. Creating a New Angular Component - Overview - Part 2
 
 `ng generate class sales-person-list/SalesPerson`
+![](assets/Pasted%20image%2020220917090121.png)
+![](assets/Pasted%20image%2020220917090152.png)
+
 
 ### 8. Creating a New Angular Component - Write Some Code - Part 1
 
@@ -693,10 +817,16 @@ for (let tempCoach of theCoaches) {
 ## 8. Angular Crash Course - Bootstrap CSS, Conditionals and Formatting
 
 ### 1. Integrating Angular and Bootstrap CSS - Overview
+![](assets/Pasted%20image%2020220917090343.png)
+![](assets/Pasted%20image%2020220917090428.png)
 
 ### 2. Integrating Angular and Bootstrap CSS - Write Some Code
+copy
+![](assets/Pasted%20image%2020220917090513.png)
+![](assets/Pasted%20image%2020220917090537.png)
 
 ### 3. Angular Conditionals and Formatting - Overview
+![](assets/Pasted%20image%2020220917090653.png)
 
 sales-person-list-bootstrap.component.html
 
@@ -790,8 +920,19 @@ In our example, we will use the `[ngClass]`. This will give a red background for
 ## 9. eCommerce Project - Spring Boot Backend
 
 ### 1. Project Overview
+![](assets/Pasted%20image%2020220917095600.png)
+![](assets/Pasted%20image%2020220917095614.png)
+![](assets/Pasted%20image%2020220917095637.png)
+![](assets/Pasted%20image%2020220917095658.png)
 
 ### 2. Spring Boot Project Set Up
+![](assets/Pasted%20image%2020220917095806.png)
+![](assets/Pasted%20image%2020220917095833.png)
+![](assets/Pasted%20image%2020220917095853.png)
+![](assets/Pasted%20image%2020220917100012.png)
+![](assets/Pasted%20image%2020220917100035.png)
+![](assets/Pasted%20image%2020220917100109.png)
+![](assets/Pasted%20image%2020220917100131.png)
 
 ### 3. HEADS UP Eclipse and Lombok.html
 
@@ -826,6 +967,7 @@ java -jar lombok.jar
 \3. Follow the steps in the installer.
 
 ### 4. Set Up Database Tables
+https://github.com/darbyluv2code/fullstack-angular-and-springboot/tree/master/source-code/ecommerce-project-release-1.0/01-basic-list/ecommerce-project/01-starter-files/db-scripts
 
 ![image-20200612222915304](angular-java-spring-boot.assets/image-20200612222915304.png)  
 
@@ -939,9 +1081,10 @@ VALUES ('BOOK-TECH-1004', 'The Go Programming Language: A to Z', 'Learn Go',
 
 ![image-20200612230438820](angular-java-spring-boot.assets/image-20200612230438820.png)  
 
-
+Add JPA, rest, mysql driver, lombok
 
 ### 6. Develop JPA Entities - Part 1
+import maven project
 
 ![image-20200612230753386](angular-java-spring-boot.assets/image-20200612230753386.png)  
 
@@ -1102,6 +1245,12 @@ public interface ProductCategoryRepository extends JpaRepository<ProductCategory
 ![image-20200613003920513](angular-java-spring-boot.assets/image-20200613003920513.png)
 
 ### 9. REST APIs - Configure for Read Only - Overview
+![](assets/Pasted%20image%2020220917101615.png)
+![](assets/Pasted%20image%2020220917101713.png)
+![](assets/Pasted%20image%2020220917101757.png)
+![](assets/Pasted%20image%2020220917101819.png)
+![](assets/Pasted%20image%2020220917101836.png)
+
 
 ### 10. REST APIs - Configure for Read Only - Write Some Code
 
@@ -1116,12 +1265,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
     @Override
-    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
         HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
 
@@ -1140,6 +1290,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     }
 }
 ```
+
+![](assets/Pasted%20image%2020220917102222.png)
 
 ![image-20200613004550894](angular-java-spring-boot.assets/image-20200613004550894.png)  
 

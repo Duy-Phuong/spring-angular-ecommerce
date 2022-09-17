@@ -34,7 +34,6 @@ type: daily-note
 
 
 
-
 ## Links
 https://www.redgregory.com/obsidian-content/2021/11/17/15-templater-commands-for-obsidian
 
