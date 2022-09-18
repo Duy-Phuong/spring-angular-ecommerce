@@ -3614,6 +3614,7 @@ addToCart() {
 ## 18. eCommerce Project - List Shopping Cart Items
 
 ### 1. Angular Project - List Shopping Cart Items - Overview
+pdf
 
 `ng generate component components/cart-details`
 
@@ -3787,7 +3788,7 @@ cart-details.component.html
 
 
 ### 8 Angular Project - Increment Item Quantity - Overview
-
+![](assets/Pasted%20image%2020220918001328.png)
 
 
 ### 9. Angular Project - Increment Item Quantity - Layout the Buttons
@@ -4351,6 +4352,7 @@ checkout.component.ts
                     <p>Shipping: FREE</p>
                     <p>Total Price: {{ totalPrice | currency: 'USD' }}</p>
                 </div>
+            // submit btn
 ```
 
 
