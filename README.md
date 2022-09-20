@@ -13,3 +13,5 @@ Notion: slide in gg drive and Full Stack: Angular and Java Spring Boot E-Commerc
 
 https://github.com/darbyluv2code/fullstack-angular-and-springboot/blob/master/install-angular-tools/mac/install-mac.md
 
+session storage and local storage
+
